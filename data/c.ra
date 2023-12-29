@@ -1,0 +1,8 @@
+LOAD Student
+LOAD Advisor
+table1 <- CROSS Student Advisor
+table2 <- SELECT Advisor_id == Adv_Id FROM table1
+table3 <- SELECT Stud_sex != Adv_sex FROM table2
+table4 <- PROJECT Stud_Id , Adv_Id , Stud_sex , Adv_sex FROM table3
+EXPORT table4
+PRINT table4

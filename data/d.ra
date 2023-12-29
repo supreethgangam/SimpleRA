@@ -1,0 +1,11 @@
+LOAD Student
+LOAD Marks
+
+D_1 <- SELECT Stud_age >= 16 FROM Student
+D_2 <- SELECT Stud_age <= 18 FROM D_1
+D_3 <- CROSS Marks D_2
+D_temp <- SELECT Marks_Stud_Id ==  D_2_Stud_Id FROM D_3
+D_4 <- SELECT Maths_marks >= 70 FROM D_temp
+D_5 <- SELECT Physics_marks > 60 FROM D_4
+D <- PROJECT Marks_Stud_Id , Maths_marks , Physics_marks , Stud_age FROM D_5
+PRINT D

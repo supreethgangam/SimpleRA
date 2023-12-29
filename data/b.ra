@@ -1,0 +1,7 @@
+LOAD Student
+
+P <- SELECT Stud_sex == 1 FROM Student
+Q <- SELECT Stud_age > 16 FROM P
+new_table_b <- PROJECT Stud_Id , Stud_age FROM Q
+EXPORT new_table_b
+PRINT new_table_b

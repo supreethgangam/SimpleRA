@@ -1,0 +1,4 @@
+S <- SELECT Stud_sex==0 FROM Student
+new_table <- PROJECT Stud_Id , Stud_age FROM S
+EXPORT new_table
+PRINT new_table

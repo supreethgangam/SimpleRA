@@ -1,0 +1,9 @@
+LOAD Student
+LOAD Marks
+
+H_1 <- SELECT Advisor_id == 2 FROM Student
+H_temp <- CROSS H_1 Marks
+H_2 <- SELECT H_1_Stud_Id == Marks_Stud_Id FROM H_temp
+H_3 <- SELECT Maths_marks > 90 FROM H_2
+H <- PROJECT H_1_Stud_Id FROM H_3
+PRINT H
